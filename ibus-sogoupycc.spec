@@ -12,6 +12,7 @@ Source1:   CMakeLists.txt
 Patch0:    ibus-sogoupycc-path-prefix.path
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ibus-devel >= 1.2.0
+BuildRequires:  cmake
 Requires:	ibus >= 1.2.0
 Requires:	wget js
 
