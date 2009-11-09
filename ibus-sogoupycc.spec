@@ -3,7 +3,7 @@
 Name:      ibus-sogoupycc
 Summary:   Sogou Pinyin Cloud Client on ibus platform
 Version:   0.0.1
-Release:   %mkrel -c svn%svnrel 1
+Release:   %mkrel -c svn%svnrel 2
 Group:     System/Internationalization
 License:   GPLv2
 URL:       http://code.google.com/p/ibus-sogoupycc/
@@ -31,7 +31,7 @@ Features:
 cp %{SOURCE1} .
 
 %build
-%cmake
+%cmake -DLIBEXEC_DIR=%{_libdir}
 %make
 
 %install
