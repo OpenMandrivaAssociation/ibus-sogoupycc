@@ -1,20 +1,22 @@
-%define svnrel 21
-
 Name:      ibus-sogoupycc
 Summary:   Sogou Pinyin Cloud Client on ibus platform
-Version:   0.0.1
-Release:   %mkrel -c svn%svnrel 2
+Version:   0.2.0.20100318
+Release:   %mkrel 1
 Group:     System/Internationalization
 License:   GPLv2
 URL:       http://code.google.com/p/ibus-sogoupycc/
-Source0:   %{name}-r%{svnrel}.tar.bz2
+Source0:   http://ibus-sogoupycc.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:    ibus-sogoupycc-cmake.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ibus-devel >= 1.2.0
 BuildRequires:	lua-devel >= 5.1
+BuildRequires:	glib2-devel >= 2.22
+BuildRequires:	dbus-devel >= 1.2
+BuildRequires:	gtk+2-devel
+BuildRequires:	sqlite3-devel
+BuildRequires:	libnotify-devel >= 0.4
 BuildRequires:  cmake
 Requires:	ibus >= 1.2.0
-Requires:	wget js
 
 %description
 ibus-sogoupycc is an unoffical Sogou pinyin cloud client on ibus platform. 
@@ -26,13 +28,13 @@ Features:
   server's responses.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}
 %patch0 -p0 -b .cmake
 #cp %{SOURCE1} .
 
 %build
-%cmake -DLIBEXEC_DIR=%{_libdir}
-%make VERBOSE=1
+%cmake
+%make
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -43,9 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%{_libexecdir}/ibus-sogoupycc
-%dir %{_datadir}/ibus-sogoupycc
-%{_datadir}/ibus-sogoupycc/config
-%dir %{_datadir}/ibus-sogoupycc/icons
-%{_datadir}/ibus-sogoupycc/icons/ibus-sogoupycc.png
+%{_datadir}/ibus-sogoupycc
 %{_datadir}/ibus/component/sogoupycc.xml
