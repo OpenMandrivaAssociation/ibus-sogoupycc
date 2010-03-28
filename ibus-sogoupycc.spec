@@ -1,7 +1,7 @@
 Name:      ibus-sogoupycc
 Summary:   Sogou Pinyin Cloud Client on ibus platform
 Version:   0.2.0.20100318
-Release:   %mkrel 1
+Release:   %mkrel 2
 Group:     System/Internationalization
 License:   GPLv2
 URL:       http://code.google.com/p/ibus-sogoupycc/
@@ -17,6 +17,7 @@ BuildRequires:	sqlite3-devel
 BuildRequires:	libnotify-devel >= 0.4
 BuildRequires:  cmake
 Requires:	ibus >= 1.2.0
+Requires:	lua-socket
 
 %description
 ibus-sogoupycc is an unoffical Sogou pinyin cloud client on ibus platform. 
