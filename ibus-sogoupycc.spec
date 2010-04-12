@@ -1,12 +1,11 @@
 Name:      ibus-sogoupycc
 Summary:   Sogou Pinyin Cloud Client on ibus platform
-Version:   0.2.0.20100318
+Version:   0.2.4.20100401
 Release:   %mkrel 2
 Group:     System/Internationalization
 License:   GPLv2
 URL:       http://code.google.com/p/ibus-sogoupycc/
 Source0:   http://ibus-sogoupycc.googlecode.com/files/%{name}-%{version}.tar.gz
-Patch0:    ibus-sogoupycc-cmake.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ibus-devel >= 1.2.0
 BuildRequires:	lua-devel >= 5.1
@@ -30,8 +29,6 @@ Features:
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p0 -b .cmake
-#cp %{SOURCE1} .
 
 %build
 %cmake
