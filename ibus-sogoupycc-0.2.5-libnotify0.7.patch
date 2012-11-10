@@ -1,0 +1,27 @@
+--- src/XUtility.cpp.libnotify	2011-04-12 05:32:37.000000000 +0200
++++ src/XUtility.cpp	2011-04-12 05:33:06.000000000 +0200
+@@ -87,7 +87,7 @@
+         // init libnotify
+         notifyInited = notify_init("ibus-sogoupycc");
+         if (notifyInited) {
+-            staticNotify = notify_notification_new("-", NULL, NULL, NULL);
++            staticNotify = notify_notification_new("-", NULL, NULL);
+         }
+ 
+         staticInited = true;
+@@ -98,7 +98,7 @@
+         if (Configuration::staticNotification) return showStaticNotify(summary, body, iconPath);
+         if (!notifyInited) return false;
+         if (summary == NULL || summary[0] == '\0') return false;
+-        NotifyNotification *notify = notify_notification_new(summary, body, iconPath, NULL);
++        NotifyNotification *notify = notify_notification_new(summary, body, iconPath);
+         int r = notify_notification_show(notify, NULL);
+         g_object_unref(G_OBJECT(notify));
+         return (r != FALSE);
+@@ -183,4 +183,4 @@
+         LuaBinding::getStaticBinding().registerFunction(l_notify, "notify");
+         LuaBinding::getStaticBinding().registerFunction(l_getSelection, "get_selection");
+     }
+-}
+\ No newline at end of file
++}

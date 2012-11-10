@@ -1,0 +1,10 @@
+--- src/main.cpp.dbus	2010-08-08 18:23:43.000000000 +0200
++++ src/main.cpp	2010-08-08 18:23:53.000000000 +0200
+@@ -14,6 +14,7 @@
+ #include <ibus.h>
+ #include <signal.h>
+ #include <gtk/gtk.h>
++#include <dbus/dbus.h>
+ 
+ #include "defines.h"
+ #include "engine.h"
