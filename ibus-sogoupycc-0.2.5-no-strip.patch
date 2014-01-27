@@ -1,0 +1,11 @@
+diff -urN ibus-sogoupycc-0.2.5/src/CMakeLists.txt ibus-sogoupycc-0.2.5-patched/src/CMakeLists.txt
+--- ibus-sogoupycc-0.2.5/src/CMakeLists.txt	2010-03-27 22:47:12.000000000 +1000
++++ ibus-sogoupycc-0.2.5-patched/src/CMakeLists.txt	2014-01-27 23:26:15.303704001 +1100
+@@ -18,7 +18,6 @@
+ PKG_CHECK_MODULES(REQPKGS REQUIRED ibus-1.0>=1.2.0;glib-2.0>=2.22;gthread-2.0>=2.22;dbus-1>=1.2;sqlite3;gtk+-2.0;gdk-2.0;libnotify>=0.4)
+ 
+ SET_SOURCE_FILES_PROPERTIES(${SRCS} COMPILE_FLAGS "-pthread -DPKGDATADIR=${PKGDATADIR}")
+-SET_TARGET_PROPERTIES(ibus-sogoupycc PROPERTIES LINK_FLAGS "-s")
+ 
+ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_DIR};${REQPKGS_INCLUDE_DIRS};${LUA51_INCLUDE_DIRS})
+ LINK_DIRECTORIES(${REQPKGS_LIBRARY_DIRS};${LUA51_LIBRARY_DIRS})
