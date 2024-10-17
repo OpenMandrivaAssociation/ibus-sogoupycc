@@ -8,7 +8,7 @@ Version:	0.2.5
 Release:	11
 Group:		System/Internationalization
 License:	GPLv2+
-Url:		http://code.google.com/p/ibus-sogoupycc/
+Url:		https://code.google.com/p/ibus-sogoupycc/
 Source0:	http://ibus-sogoupycc.googlecode.com/files/%{name}-%{version}.tar.gz
 Patch0:		ibus-sogoupycc-0.2.5-default-use-sogoupy-schema.patch
 Patch1:		ibus-sogoupycc-0.2.5-fix-dbus-build.patch
